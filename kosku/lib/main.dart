@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:kosku/pages/mobile/mainpage.dart';
@@ -8,7 +6,6 @@ import 'package:kosku/pages/web/mainpage.dart';
 void main() {
   runApp(const MyApp());
 }
-
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
