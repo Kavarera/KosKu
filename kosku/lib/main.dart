@@ -1,4 +1,5 @@
 
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:kosku/pages/mobile/mainpage.dart';
@@ -16,23 +17,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints){
-          return constraints.maxWidth > 900 ? WebMainPage() : MainPage();
-        },
-      )
+      home: Theme.of(context).platform == TargetPlatform.android ? MainPage() 
+      : Theme.of(context).platform == TargetPlatform.iOS ? MainPage() : WebMainPage()
       );
-  }
-
-  Widget webpage(){
-    return Scaffold(
-      body: WebMainPage(),
-    );
-  }
-
-  Widget mobilepage(){
-    return Scaffold(
-      body: MainPage(),
-    );
   }
 }
